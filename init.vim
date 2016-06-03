@@ -1,3 +1,4 @@
+set nocompatible
 set number "行番号の表示
 set title "編集中のファイル名を表示
 set showmatch "括弧入力時の対応する括弧を表示
@@ -27,30 +28,42 @@ set encoding=utf8
 set fileencodings=utf-8,euc-jp,iso-2022-jp,cp932
 set showcmd "画面最下部にコマンド表示
 
-let g:EasyMotion_leader_key=";"
+filetype indent on
+
+set colorcolumn=80
 
 if &compatible
-        set nocompatible
+        set  nocompatible
 endif
 set runtimepath ^=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 call dein#begin(expand('~/.cache/dein'))
-call dein#add('Shougo/dein.vim')
+" "call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/neocomplete.vim')
+call dein#add('Shougo/vimfiler')
+call dein#add('Shougo/unite.vim')
 call dein#add('tomasr/molokai')
-call dein#add('tpope/vim-fugitive')
 call dein#add('itchyny/lightline.vim')
 call dein#add('Yggdroot/indentLine')
 call dein#add('Lokaltog/vim-easymotion')
 call dein#add('kannokanno/previm')
+call dein#add('tyru/open-browser.vim')
 call dein#add('davidhalter/jedi-vim')
 call dein#add('tyru/caw.vim')
-nmap <C-K> <Plug>(caw:i:toggle)
-vmap <C-K> <Plug>(caw:i:toggle)
+" call dein#add('scrooloose/syntastic')
+nmap <C-k> <Plug>(caw:i:toggle)
+vmap <C-k> <Plug>(caw:i:toggle)
 "add plugins
 call dein#end()
 
-filetype plugin indent on
 
+let g:EasyMotion_leader_key=";"
 colorscheme molokai
-set list listchars=tab:\¦\ 
+
+" 閉じカッコ
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap ( ()<Left>
+
+"stop hilight
+nnoremap <ESC><ESC> :nohlsearch<CR>
+
