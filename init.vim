@@ -1,12 +1,10 @@
-set nocompatible
 set number "行番号の表示
 set title "編集中のファイル名を表示
 set showmatch "括弧入力時の対応する括弧を表示
 set matchtime=1 "matchtimeを0.1sに
-syntax on "コードの色分け
-set tabstop=8 "インデントを8つ分に設定
+set tabstop=4 "インデントを4つ分に設定
 set expandtab "tabを半角スペースで挿入
-set shiftwidth=8 "vimが自動で生成するtab幅を8に
+set shiftwidth=4 "vimが自動で生成するtab幅を4に
 set smartindent "オートインデント
 set clipboard=unnamed
 set cursorline
@@ -28,42 +26,59 @@ set encoding=utf8
 set fileencodings=utf-8,euc-jp,iso-2022-jp,cp932
 set showcmd "画面最下部にコマンド表示
 
+let g:tex_conceal=''
+
 filetype indent on
 
 set colorcolumn=80
 
-if &compatible
-        set  nocompatible
-endif
-set runtimepath ^=~/.vim/dein/repos/github.com/Shougo/dein.vim
+"stop highlight
+nnoremap <ESC><ESC> :nohlsearch<CR>
 
-call dein#begin(expand('~/.cache/dein'))
-" "call dein#add('Shougo/dein.vim')
-call dein#add('Shougo/neocomplete.vim')
-call dein#add('Shougo/vimfiler')
-call dein#add('Shougo/unite.vim')
-call dein#add('tomasr/molokai')
-call dein#add('itchyny/lightline.vim')
-call dein#add('Yggdroot/indentLine')
-call dein#add('Lokaltog/vim-easymotion')
-call dein#add('kannokanno/previm')
-call dein#add('tyru/open-browser.vim')
-call dein#add('davidhalter/jedi-vim')
-call dein#add('tyru/caw.vim')
-" call dein#add('scrooloose/syntastic')
-nmap <C-k> <Plug>(caw:i:toggle)
-vmap <C-k> <Plug>(caw:i:toggle)
-"add plugins
-call dein#end()
-
-
-let g:EasyMotion_leader_key=";"
-colorscheme molokai
 
 " 閉じカッコ
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap ( ()<Left>
 
-"stop hilight
-nnoremap <ESC><ESC> :nohlsearch<CR>
+" Makefile
+let _curfile=expand("%:r")
+if _curfile == 'Makefile'
+    set noexpandtab
+endif
 
+"#######dein########
+
+if &compatible
+        set  nocompatible
+endif
+
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
+
+if dein#load_state(s:dein_dir)
+    call dein#begin(s:dein_dir)
+
+    let g:rc_dir    = expand('~/.vim/rc')
+    let s:toml      = g:rc_dir . '/dein.toml'
+    let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+
+    call dein#load_toml(s:toml,      {'lazy': 0})
+    call dein#load_toml(s:lazy_toml, {'lazy': 1})
+    call dein#end()
+    call dein#save_state()
+endif
+
+"if there is something not installed, install it
+if dein#check_install()
+    call dein#install()
+endif
+
+colorscheme molokai
+syntax on
