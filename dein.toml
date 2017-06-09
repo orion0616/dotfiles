@@ -20,7 +20,7 @@ repo = 'derekwyatt/vim-scala'
 [[plugins]]
 repo = 'Lokaltog/vim-easymotion'
 hook_add = '''
-let g:EasyMotion_leader_key=";"
+let g:EasyMotion_leader_key=","
 '''
 
 [[plugins]]

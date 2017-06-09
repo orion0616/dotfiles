@@ -42,6 +42,10 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap ( ()<Left>
 
+" When normal mode, change ; and :
+nnoremap : ;
+nnoremap ; :
+
 " Makefile
 let _curfile=expand("%:r")
 if _curfile == 'Makefile'
