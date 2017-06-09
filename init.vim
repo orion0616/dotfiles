@@ -25,6 +25,7 @@ set wrap "ウィンドウの幅より長い行は折り返して、次の行で�
 set encoding=utf8
 set fileencodings=utf-8,euc-jp,iso-2022-jp,cp932
 set showcmd "画面最下部にコマンド表示
+set hidden
 filetype plugin indent on
 
 let g:tex_conceal=''
