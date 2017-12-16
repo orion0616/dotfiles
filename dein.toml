@@ -5,6 +5,9 @@ repo = 'Shougo/dein.vim'
 repo = 'tomasr/molokai'
 
 [[plugins]]
+repo = 'altercation/vim-colors-solarized'
+
+[[plugins]]
 repo = 'tyru/caw.vim'
 hook_add = '''
 nmap <C-k> <Plug>(caw:hatpos:toggle)
@@ -33,10 +36,32 @@ repo = 'kannokanno/previm'
 repo = 'tyru/open-browser.vim'
 
 [[plugins]]
-repo = 'scrooloose/syntastic'
-hook_add ='''
-    let g:syntastic_check_on_wq = 0
-'''
+repo = 'rust-lang/rust.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'
+hook_add ='''
+    let g:rustfmt_autosave = 1
+'''
+
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+[[plugins]]
+repo = 'w0rp/ale'
+
+[[plugins]]
+reoi = 'bronson/vim-trailing-whitespace'

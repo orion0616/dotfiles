@@ -23,9 +23,11 @@ set laststatus=2 "エディタウィンドウの末尾から2行目にstatus lin
 set wildmenu "コマンドライン補完を拡張モードに
 set wrap "ウィンドウの幅より長い行は折り返して、次の行で表示
 set encoding=utf8
+set fileencoding=utf-8 "保存時の文字コード
 set fileencodings=utf-8,euc-jp,iso-2022-jp,cp932
 set showcmd "画面最下部にコマンド表示
 set hidden
+autocmd BufWritePre * :%s/\s\+$//ge
 filetype plugin indent on
 
 let g:tex_conceal=''
@@ -39,8 +41,8 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 
 
 " 閉じカッコ
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap ( ()<Left>
+" inoremap {<Enter> {}<Left><CR><ESC><S-o>
+" inoremap ( ()<Left>
 
 " When normal mode, change ; and :
 nnoremap : ;
@@ -86,5 +88,6 @@ if dein#check_install()
     call dein#install()
 endif
 
-colorscheme molokai
+set background=light
+colorscheme solarized
 syntax on
