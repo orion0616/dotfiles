@@ -64,4 +64,4 @@ repo = 'Townk/vim-autoclose'
 repo = 'w0rp/ale'
 
 [[plugins]]
-reoi = 'bronson/vim-trailing-whitespace'
+repo = 'bronson/vim-trailing-whitespace'
