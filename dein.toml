@@ -8,13 +8,6 @@ repo = 'tomasr/molokai'
 repo = 'altercation/vim-colors-solarized'
 
 [[plugins]]
-repo = 'tyru/caw.vim'
-hook_add = '''
-nmap <C-k> <Plug>(caw:hatpos:toggle)
-vmap <C-k> <Plug>(caw:hatpos:toggle)
-'''
-
-[[plugins]]
 repo = 'itchyny/lightline.vim'
 
 [[plugins]]
@@ -58,10 +51,17 @@ hook_add ='''
 '''
 
 [[plugins]]
-repo = 'Townk/vim-autoclose'
+repo = 'tyru/caw.vim'
+hook_add = '''
+nmap <C-k> <Plug>(caw:hatpos:toggle)
+vmap <C-k> <Plug>(caw:hatpos:toggle)
+'''
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]
 repo = 'w0rp/ale'
 
 [[plugins]]
-reoi = 'bronson/vim-trailing-whitespace'
+repo = 'bronson/vim-trailing-whitespace'
