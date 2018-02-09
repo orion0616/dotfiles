@@ -65,3 +65,9 @@ repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
