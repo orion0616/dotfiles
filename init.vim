@@ -39,10 +39,17 @@ set colorcolumn=80
 "stop highlight
 nnoremap <ESC><ESC> :nohlsearch<CR>
 
+" make arrows invalid
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
-" 閉じカッコ
-" inoremap {<Enter> {}<Left><CR><ESC><S-o>
-" inoremap ( ()<Left>
+" switch (j,k) and (gj, gk)
+nnoremap k gk
+nnoremap gk k
+nnoremap j gj
+nnoremap gj j
 
 " When normal mode, change ; and :
 nnoremap : ;
@@ -89,5 +96,5 @@ if dein#check_install()
 endif
 
 set background=light
-colorscheme solarized
+colorscheme molokai
 syntax on
