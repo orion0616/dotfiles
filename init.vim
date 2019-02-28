@@ -30,6 +30,16 @@ set hidden
 autocmd BufWritePre * :%s/\s\+$//ge
 filetype plugin indent on
 
+" change tabsize
+if has("autocmd")
+  "ファイルタイプの検索を有効にする
+  filetype plugin on
+  "ファイルタイプに合わせたインデントを利用
+  filetype indent on
+  "sw=softtabstop, sts=shiftwidth, ts=tabstop, et=expandtabの略
+  autocmd FileType javascript  setlocal sw=2 sts=2 ts=2 et
+endif
+
 let g:tex_conceal=''
 
 filetype indent on
@@ -50,6 +60,9 @@ nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
+
+" map %:h to %%
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " When normal mode, change ; and :
 nnoremap : ;
