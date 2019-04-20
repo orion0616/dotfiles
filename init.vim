@@ -64,6 +64,9 @@ nnoremap gj j
 " map %:h to %%
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
+" map Ctrl+P to :!python %
+nnoremap <C-p> :!python %
+
 " When normal mode, change ; and :
 nnoremap : ;
 nnoremap ; :
