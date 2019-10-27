@@ -27,6 +27,7 @@ set fileencoding=utf-8 "保存時の文字コード
 set fileencodings=utf-8,euc-jp,iso-2022-jp,cp932
 set showcmd "画面最下部にコマンド表示
 set hidden
+set pastetoggle=<f5>
 autocmd BufWritePre * :%s/\s\+$//ge
 filetype plugin indent on
 
