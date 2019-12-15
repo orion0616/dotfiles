@@ -26,7 +26,7 @@ set encoding=utf8
 set fileencoding=utf-8 "保存時の文字コード
 set fileencodings=utf-8,euc-jp,iso-2022-jp,cp932
 set showcmd "画面最下部にコマンド表示
-set hidden
+set hidden  "保存されていないファイルがあるときも別のファイルを開くことが出来る
 set pastetoggle=<f5>
 set colorcolumn=80
 filetype plugin indent on
@@ -34,7 +34,10 @@ filetype plugin indent on
 " autocmd
 if has("autocmd")
   "sw=softtabstop, sts=shiftwidth, ts=tabstop, et=expandtabの略
-  autocmd FileType javascript  setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType javascript setlocal sw=2 sts=2 ts=2
+  autocmd FileType ruby       setlocal sw=2 sts=2 ts=2
+  autocmd FileType vim        setlocal sw=2 sts=2 ts=2
+  autocmd FileType yaml       setlocal sw=2 sts=2 ts=2
   autocmd BufWritePre * :%s/\s\+$//ge
 endif
 
@@ -62,11 +65,6 @@ nnoremap ; :
 
 
 "#######dein########
-
-if &compatible
-  set  nocompatible
-endif
-
 let s:dein_dir = expand('~/.cache/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
