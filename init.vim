@@ -38,6 +38,7 @@ if has("autocmd")
   autocmd FileType ruby       setlocal sw=2 sts=2 ts=2
   autocmd FileType vim        setlocal sw=2 sts=2 ts=2
   autocmd FileType yaml       setlocal sw=2 sts=2 ts=2
+  autocmd FileType eruby      setlocal sw=2 sts=2 ts=2
   autocmd BufWritePre * :%s/\s\+$//ge
 endif
 
