@@ -28,60 +28,43 @@ set fileencodings=utf-8,euc-jp,iso-2022-jp,cp932
 set showcmd "画面最下部にコマンド表示
 set hidden
 set pastetoggle=<f5>
-autocmd BufWritePre * :%s/\s\+$//ge
+set colorcolumn=80
 filetype plugin indent on
 
-" change tabsize
+" autocmd
 if has("autocmd")
-  "ファイルタイプの検索を有効にする
-  filetype plugin on
-  "ファイルタイプに合わせたインデントを利用
-  filetype indent on
   "sw=softtabstop, sts=shiftwidth, ts=tabstop, et=expandtabの略
   autocmd FileType javascript  setlocal sw=2 sts=2 ts=2 et
+  autocmd BufWritePre * :%s/\s\+$//ge
 endif
 
-let g:tex_conceal=''
 
-filetype indent on
-
-set colorcolumn=80
-
+" ##### Key Mapping #####
 "stop highlight
 nnoremap <ESC><ESC> :nohlsearch<CR>
-
 " make arrows invalid
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-
 " switch (j,k) and (gj, gk)
 nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
-
 " map %:h to %%
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
 " map Ctrl+P to :!python %
 nnoremap <C-p> :!python %
-
 " When normal mode, change ; and :
 nnoremap : ;
 nnoremap ; :
 
-" Makefile
-let _curfile=expand("%:r")
-if _curfile == 'Makefile'
-    set noexpandtab
-endif
 
 "#######dein########
 
 if &compatible
-        set  nocompatible
+  set  nocompatible
 endif
 
 let s:dein_dir = expand('~/.cache/dein')
@@ -109,7 +92,7 @@ endif
 
 "if there is something not installed, install it
 if dein#check_install()
-    call dein#install()
+  call dein#install()
 endif
 
 set background=light
