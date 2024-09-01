@@ -6,7 +6,7 @@
     - zsh-completions
     - zsh-autosuggestions
     - zsh-syntax-highlighting
-  - peco を利用.
+  - fzf を利用.
 
 ## NeoVim 関連ファイル
 - init.vim
