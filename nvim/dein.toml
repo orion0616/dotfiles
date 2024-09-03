@@ -1,17 +1,5 @@
 [[plugins]]
-repo = 'Shougo/dein.vim'
-
-[[plugins]]
-repo = 'tomasr/molokai'
-
-[[plugins]]
-repo = 'altercation/vim-colors-solarized'
-
-[[plugins]]
 repo = 'itchyny/lightline.vim'
-
-[[plugins]]
-repo = 'derekwyatt/vim-scala'
 
 [[plugins]]
 repo = 'Lokaltog/vim-easymotion'
@@ -32,45 +20,11 @@ repo = 'tyru/open-browser.vim'
 repo = 'rust-lang/rust.vim'
 
 [[plugins]]
-repo = 'Shougo/vimproc.vim'
-build = 'make'
-
-[[plugins]]
-repo = 'Shougo/unite.vim'
-
-[[plugins]]
-repo = 'Shougo/vimfiler.vim'
-
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-
-[[plugins]]
-repo = 'rust-lang/rust.vim'
-hook_add ='''
-    let g:rustfmt_autosave = 1
-'''
-
-[[plugins]]
-repo = 'tyru/caw.vim'
-hook_add = '''
-nmap <C-k> <Plug>(caw:hatpos:toggle)
-vmap <C-k> <Plug>(caw:hatpos:toggle)
-'''
-
-[[plugins]]
 repo = 'jiangmiao/auto-pairs'
-
-[[plugins]]
-repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 
 [[plugins]]
-repo = 'fatih/vim-go'
-
-[[plugins]]
-repo = 'cespare/vim-toml'
-
-[[plugins]]
 repo = 'tpope/vim-surround'
+

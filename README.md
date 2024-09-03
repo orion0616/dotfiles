@@ -12,4 +12,3 @@
 - init.vim
 - dein.toml
 - dein\_lazy.toml
-
