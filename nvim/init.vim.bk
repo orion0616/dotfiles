@@ -1,18 +1,12 @@
-set number "行番号の表示
-set title "編集中のファイル名を表示
-set showmatch "括弧入力時の対応する括弧を表示
-set matchtime=1 "matchtimeを0.1sに
 set tabstop=4 "インデントを4つ分に設定
 set expandtab "tabを半角スペースで挿入
 set shiftwidth=4 "vimが自動で生成するtab幅を4に
 set smartindent "オートインデント
 set clipboard=unnamed
 set cursorline
-"set list "空白文字の可視化
 set virtualedit=block "文字のないところにカーソル移動できるように
 set backspace=indent,eol,start "BSを空白行末行頭でも使えるように
 set whichwrap=b,s,h,l,<,>,[,] "カーソルを行頭行末で止まらないように
-set mouse=a "全モードでマウスを有効化
 
 "検索設定
 set ignorecase "大文字小文字の区別なく検索する
@@ -29,18 +23,12 @@ set showcmd "画面最下部にコマンド表示
 set hidden  "保存されていないファイルがあるときも別のファイルを開くことが出来る
 set pastetoggle=<f5>
 set colorcolumn=80
-filetype plugin indent on
 
 " autocmd
 if has("autocmd")
   "sw=softtabstop, sts=shiftwidth, ts=tabstop, et=expandtabの略
   autocmd FileType javascript setlocal sw=2 sts=2 ts=2
-  autocmd FileType ruby       setlocal sw=2 sts=2 ts=2
   autocmd FileType vim        setlocal sw=2 sts=2 ts=2
   autocmd FileType yaml       setlocal sw=2 sts=2 ts=2
-  autocmd FileType eruby      setlocal sw=2 sts=2 ts=2
   autocmd BufWritePre * :%s/\s\+$//ge
 endif
-
-
-syntax on
