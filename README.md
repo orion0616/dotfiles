@@ -9,6 +9,16 @@
   - fzf を利用.
 
 ## NeoVim 関連ファイル
-- init.vim
-- dein.toml
-- dein\_lazy.toml
+
+```
+nvim
+├── init.lua 
+├── lazy-lock.json
+└── lua
+    ├── config
+    │   └── lazy.lua
+    ├── keymaps.lua
+    └── plugins
+        ├── both (VSCode と ネイティブな NeoVim の両方で使うプラグイン)
+        └── only-nvim (VSCode では使わないプラグイン)
+``` 
