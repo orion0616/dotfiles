@@ -118,3 +118,8 @@ function peco-history-selection() {
 }
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
+
+# alias
+alias vi='nvim'
+alias vim='nvim'
+alias ls='ls --color=auto'
