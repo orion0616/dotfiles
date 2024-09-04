@@ -1,4 +1,5 @@
 -- nvim-tree.lua
+vim.api.nvim_create_user_command("Ex", function() vim.cmd.NvimTreeToggle() end, {})
 return {
   "nvim-tree/nvim-tree.lua",
   lazy = false,
