@@ -15,5 +15,5 @@ vim.keymap.set('n', 'gk', 'k')
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'gj', 'j')
 
--- switch jj -> <ESC> in isert mode
+-- switch jj -> <ESC> in insert mode
 vim.keymap.set('i', 'jj', '<ESC>')
