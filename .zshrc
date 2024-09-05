@@ -123,3 +123,6 @@ bindkey '^R' fzf-history-selection
 alias vi='nvim'
 alias vim='nvim'
 alias ls='ls --color=auto'
+
+# cargo
+export PATH=$HOME/.cargo/bin:$PATH
