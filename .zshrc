@@ -73,6 +73,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
     git
     aliases
+    vi-mode
     # .oh-my-zsh 配下に clone してくる必要あり
     zsh-completions
     zsh-autosuggestions
