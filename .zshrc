@@ -1,4 +1,26 @@
 # ============================================================================
+# Oh My Zsh
+# ============================================================================
+
+# Path to Oh My Zsh installation
+export ZSH="$HOME/.oh-my-zsh"
+
+# Theme
+ZSH_THEME="jonathan"
+
+# Plugins
+plugins=(
+  git
+  fzf
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zsh-completions
+)
+
+# Load Oh My Zsh
+source $ZSH/oh-my-zsh.sh
+
+# ============================================================================
 # Basic Settings
 # ============================================================================
 
@@ -17,13 +39,6 @@ export VISUAL=nvim
 setopt auto_cd              # ディレクトリ名だけで移動
 setopt auto_pushd           # cd時に自動でディレクトリスタックに追加
 setopt pushd_ignore_dups    # 重複したディレクトリはスタックに追加しない
-
-# 補完
-autoload -Uz compinit && compinit
-setopt auto_menu            # タブ連打で補完候補を順に表示
-setopt auto_list            # 補完候補を一覧表示
-setopt list_packed          # 補完候補を詰めて表示
-setopt complete_in_word     # 語の途中でも補完
 
 # 履歴
 HISTFILE=~/.zsh_history
